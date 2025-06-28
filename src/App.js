@@ -86,7 +86,7 @@ const parseMarkdown = (text) => {
     .replace(/_(.*?)_/g, "<em>$1</em>")
     .replace(
       /`(.*?)`/g,
-      '<code class="bg-gray-200 text-sm rounded px-1 py-0.5">$1</code>'
+      '<code class="bg-gray-200 text-sm rounded px-1 py-0.5">$1</code>',
     )
     .replace(/^\* (.*$)/gim, '<ul><li class="list-disc ml-5">$1</li></ul>')
     .replace(/<\/ul>\n<ul>/g, "")
@@ -244,10 +244,10 @@ const App = () => {
     try {
       await Promise.all([
         loadScript(
-          "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+          "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js",
         ),
         loadScript(
-          "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+          "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js",
         ),
       ]);
 
@@ -349,7 +349,7 @@ const App = () => {
           ([key, value]) =>
             `${key
               .replace(/([A-Z])/g, " $1")
-              .replace(/^./, (str) => str.toUpperCase())}: ${value}`
+              .replace(/^./, (str) => str.toUpperCase())}: ${value}`,
         )
         .join("\n");
 
